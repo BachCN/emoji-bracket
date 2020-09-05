@@ -17,6 +17,18 @@ let Emoji = {
     }
     return text;
   },
+  hasEmoji: function (text) {
+    return emojiRegex.test(text);
+  },
+  removeEmoji: function (text) {
+    if (!text) return "";
+    let result = text.match(emojiRegex);
+    for (let i in result) {
+      let e = result[i];
+      text = text.replace(e, "");
+    }
+    return text;
+  },
   toEmoji: function (text) {
     if (!text) return "";
     let result = text.match(emojiTextRegx);
