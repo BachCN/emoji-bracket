@@ -5,7 +5,6 @@ const emojiContents = {};
 for (let key in emojiKeys) {
   emojiContents[emojiKeys[key]] = key;
 }
-
 let Emoji = {
   toText: function (text) {
     if (!text) return "";
@@ -41,11 +40,4 @@ let Emoji = {
     return text;
   },
 };
-
-// console.log(Emoji.toText("我觉得这样不太好吧哈哈哈哈哈 😂😂😂 🐶"));
-console.log(
-  Emoji.toEmoji(
-    "[joy[]]]] [][]]]][[]][[joy][dog][athat]arji 塞给啊日国际alarg; 2463"
-  )
-);
 module.exports = Emoji;
