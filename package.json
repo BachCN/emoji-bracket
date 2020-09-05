@@ -1,0 +1,22 @@
+{
+  "name": "emoji-bracket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/BachCN/emoji-bracket.git"
+  },
+  "keywords": [
+    "emoji"
+  ],
+  "author": "BachCN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BachCN/emoji-bracket/issues"
+  },
+  "homepage": "https://github.com/BachCN/emoji-bracket#readme"
+}
