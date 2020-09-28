@@ -1,11 +1,11 @@
 const emojiRegex = require("emoji-regex")();
-const emojiTextRegx = /\[\w+\]/g;
+const emojiTextRegx = /(\[\w+\])|(\:\w+\:)/g;
 const emojiKeys = require("./emoji-lib.json");
 const emojiContents = {};
 for (let key in emojiKeys) {
   emojiContents[emojiKeys[key]] = key;
 }
-let Emoji = {
+const Emoji = {
   toText: function (text) {
     if (!text) return "";
     let result = text.match(emojiRegex);
@@ -41,3 +41,5 @@ let Emoji = {
   },
 };
 module.exports = Emoji;
+// console.log(Emoji.toText('🐶'))
+// console.log(Emoji.toEmoji('[dog] :dog: :sjsyjsyj: [arharh]'))
