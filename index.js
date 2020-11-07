@@ -34,7 +34,6 @@ const Emoji = {
     let result = text.match(emojiTextRegx);
     for (let i in result) {
       let key = result[i].replace(/[^\w|-]/g, "");
-      console.log(key);
       if (key && emojiKeys[key]) {
         text = text.replace(result[i], emojiKeys[key]);
       }
