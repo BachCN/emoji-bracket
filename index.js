@@ -1,6 +1,6 @@
 const emojiRegex = require("emoji-regex")();
 // const emojiTextRegx = /(\[\w+\])|(\:\w+\:)/g;
-const emojiTextRegx = /(\[[\w\-]+\])|(\:[\w\-]+\:)/g;
+const emojiTextRegx = /(\[[\w\-]+?\])|(\:[\w\-]+?\:)/g;
 const emojiKeys = require("./emoji-lib.json");
 const emojiContents = {};
 for (let key in emojiKeys) {
@@ -33,7 +33,8 @@ const Emoji = {
     if (!text) return "";
     let result = text.match(emojiTextRegx);
     for (let i in result) {
-      let key = result[i].replace(/\W+/g, "");
+      let key = result[i].replace(/[^\w|-]/g, "");
+      console.log(key);
       if (key && emojiKeys[key]) {
         text = text.replace(result[i], emojiKeys[key]);
       }
@@ -42,5 +43,6 @@ const Emoji = {
   },
 };
 module.exports = Emoji;
-// console.log(Emoji.toText('🐶'))
-// console.log(Emoji.toEmoji('[dog] :dog: :sjsyjsyj: [arharh]'))
+// console.log("🐶 🇨🇳");
+// console.log(Emoji.toText("🐶 🇨🇳"));
+// console.log(Emoji.toEmoji("[dog] :dog: :sjsyjsyj: [[flag-cn]arharh]"));
