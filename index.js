@@ -1,5 +1,6 @@
 const emojiRegex = require("emoji-regex")();
-const emojiTextRegx = /(\[\w+\])|(\:\w+\:)/g;
+// const emojiTextRegx = /(\[\w+\])|(\:\w+\:)/g;
+const emojiTextRegx = /(\[[\w\-]+\])|(\:[\w\-]+\:)/g;
 const emojiKeys = require("./emoji-lib.json");
 const emojiContents = {};
 for (let key in emojiKeys) {
